@@ -1,0 +1,22 @@
+name = "interview-prep-coach"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+# Workers AI binding — lets the Worker call env.AI.run(...) for Llama 3.3.
+[ai]
+binding = "AI"
+
+# Durable Object binding — one InterviewSession instance per chat session,
+# used to persist workflow stage, extracted skills, and conversation history.
+[[durable_objects.bindings]]
+name = "SESSIONS"
+class_name = "InterviewSession"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["InterviewSession"]
+
+# Serves public/index.html (the chat UI) for any request that isn't /api/*.
+[assets]
+directory = "./public"
+binding = "ASSETS"
