@@ -2,7 +2,7 @@
 
 **Live demo:** https://interview-prep-coach.sreeyarudrangi.workers.dev
 
-I built this for the optional take-home assignment on Cloudflare's application. Instead of doing something generic, I wanted to make something I'd actually use — so this is a little interview prep tool. You paste in a job description, and it pulls out the skills the role actually cares about, then quizzes you on them one at a time, giving feedback as you go.
+I built this for the optional take-home assignment on Cloudflare's application. Instead of doing something generic, I wanted to make something I'd actually use  so this is a little interview prep tool. You paste in a job description, and it pulls out the skills the role actually cares about, then quizzes you on them one at a time, giving feedback as you go.
 
 It runs entirely on Cloudflare's own stack, which felt like the right way to show I can actually build on their platform instead of just talking about it.
 
@@ -36,11 +36,11 @@ Wanted to try it locally first? `npm run dev` works too, though Workers AI calls
 
 ## A note on how this was built
 
-I used Claude to help write this — mostly the Worker/Durable Object code and getting the deploy set up, since I hadn't touched Cloudflare's Durable Objects before. I went through it line by line and understood what it was doing rather than just copy-pasting, and I ran into (and fixed) a couple of real deployment issues along the way — the free plan needing SQLite-backed Durable Objects instead of the older kind, and needing a workers.dev subdomain set up before the first deploy would go through. Prompt history is included per the assignment's request.
+I used Claude to help write this  mostly the Worker/Durable Object code and getting the deploy set up, since I hadn't touched Cloudflare's Durable Objects before. I went through it line by line and understood what it was doing rather than just copy pasting, and I ran into (and fixed) a couple of real deployment issues along the way  the free plan needing SQLite-backed Durable Objects instead of the older kind, and needing a workers.dev subdomain set up before the first deploy would go through. Prompt history is included per the assignment's request.
 
 ## If I had more time
 
 A few things I'd add:
 - Let people upload their actual resume so the questions are personalized instead of generic
 - Stream the responses instead of waiting for the whole answer
-- Score performance per skill at the end of a session, not just give feedback question-by-question
+- Score performance per skill at the end of a session, not just give feedback question by question
